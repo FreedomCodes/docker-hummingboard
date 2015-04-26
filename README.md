@@ -1,2 +1,2 @@
-# docker-buildgear
-Docker image to build a raspberrypi linux image using buildgear
+# docker-hummingboard
+Docker image to build a hummingboard linux image using buildgear
