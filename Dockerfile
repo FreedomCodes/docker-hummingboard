@@ -1,5 +1,6 @@
 from ubuntu:15.04
 
+# Set root directory
 workdir /root/
 
 # Install required buildgear build system dependencies
@@ -14,8 +15,9 @@ run ln -sf bash /bin/sh
 # Install buildgear
 run wget http://buildgear.io/release/buildgear-0.9.24.tar.xz && tar -xvf buildgear-0.9.24.tar.xz && cd buildgear-0.9.24 && ./configure --prefix=/usr && make install
 
+# Get hummingboard buildfile repository
+run git clone --recursive https://github.com/mini-distribution/hummingboard.git
+
 # Build hummingboard distribution
-workdir /root/
-run git clone --recursive https://github.com/mini-distribution/hummingboard.git && cd hummingboard
 workdir /root/hummingboard
 run buildgear build u-boot
