@@ -1,3 +1,7 @@
+# This docker configuration builds a full software stack (fs + bootloader) for
+# the Hummingboard (imx6)
+
+# Use Ubuntu as base image
 from ubuntu:15.04
 
 # Set root directory
