@@ -5,4 +5,4 @@ Build and attach:
 
 sudo docker build -t hummingboard .
 
-sudo docker run -t hummingboard bash -il
+sudo docker run -it hummingboard bash -il
