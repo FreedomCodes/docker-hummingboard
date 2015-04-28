@@ -21,11 +21,14 @@ run wget http://buildgear.io/release/buildgear-0.9.24.tar.xz && tar -xvf buildge
 
 # Get hummingboard buildfile repository
 run git clone --recursive https://github.com/mini-distribution/hummingboard.git
+workdir /root/hummingboard
 
-# Build Gear requires TERM to be configured
-env TERM screen
+# Configure terminal
+env TERM xterm
+
+# Configure buildgear
+run buildgear config parallel_builds 2
 
 # Build hummingboard distribution
-workdir /root/hummingboard
-run buildgear build u-boot
-run buildgear build fs
+run buildgear build --no-fakeroot u-boot
+#run buildgear build --no-fakeroot fs
